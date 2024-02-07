@@ -1,4 +1,4 @@
-## Official Anti-Captcha.com npm module ##
+## Fork of Official Anti-Captcha.com npm module ##
 
 Official anti-captcha.com npm package for solving images with text, Recaptcha v2/v3 Enterprise/non-Enterpise, Funcaptcha, GeeTest, HCaptcha Enterprise/non-Enterprise.
 
@@ -6,7 +6,7 @@ Official anti-captcha.com npm package for solving images with text, Recaptcha v2
 
 To use the service you need to [register](https://anti-captcha.com/clients/) and topup your balance. Prices start from $0.0005 per image captcha and $0.002 for Recaptcha. That's $0.5 per 1000 for images and $2 for 1000 Recaptchas.
 
-For more technical information and articles visit our [documentation](https://anti-captcha.com/apidoc) page. 
+For more technical information and articles visit our [documentation](https://anti-captcha.com/apidoc) page.
 
 Module installation:
 ```bash
@@ -16,7 +16,7 @@ npm install @antiadmin/anticaptchaofficial
 Import and check your balance in sync mode:
 ```javascript
 (async() => {
-    
+
     const ac = require("@antiadmin/anticaptchaofficial");
     ac.setAPIKey('YOUR_API_KEY');
     try {
@@ -32,7 +32,7 @@ Import and check your balance in sync mode:
     } catch (e) {
         console.log("got error: ", e.toString());
     }
-    
+
 })();
 ```
 Or do the same with promises:
@@ -166,11 +166,11 @@ const gresponse = await ac.solveRecaptchaV3('http://DOMAIN.COM',
 Solve Recaptcha V2 Enterprise without proxy:
 ```javascript
 const gresponse = await ac.solveRecaptchaV2EnterpriseProxyless(
-    'http://DOMAIN.COM', 
-    'WEBSITE_KEY', 
+    'http://DOMAIN.COM',
+    'WEBSITE_KEY',
     {   //enterprise payload:
         "s" : "SOME_TOKEN",
-        "custom_parameter" : "string_number_boolean" 
+        "custom_parameter" : "string_number_boolean"
     });
 ```
 ---
@@ -192,8 +192,8 @@ await ac.reportIncorrectHcaptcha();
 
 Solve HCaptcha Enterprise without proxy:
 ```javascript
-const token = await ac.solveHCaptchaProxyless('http://DOMAIN.COM', 
-    'WEBSITE_KEY', 
+const token = await ac.solveHCaptchaProxyless('http://DOMAIN.COM',
+    'WEBSITE_KEY',
     'FULL USER AGENT HERE',
     {
         'rqdata': 'rqdata from target website',
@@ -212,8 +212,8 @@ const userAgent = ac.getHcaptchaUserAgent();
 
 Solve HCaptcha Enterprise with proxy:
 ```javascript
-const token = await ac.solveHCaptchaProxyless('http://DOMAIN.COM', 
-    'WEBSITE_KEY', 
+const token = await ac.solveHCaptchaProxyless('http://DOMAIN.COM',
+    'WEBSITE_KEY',
     'FULL USER AGENT HERE',
     'http',
     '1.2.3.4',
@@ -263,14 +263,14 @@ const token = await ac.solveTurnstileProxyOn('http://DOMAIN.COM',
 Solve AntiGate Task:
 ```javascript
 const solution = await ac.solveAntiGateTask(
-    'http://antigate.com/logintest.php', 
-    'Sign-in and wait for control text', 
-    { 
+    'http://antigate.com/logintest.php',
+    'Sign-in and wait for control text',
+    {
         "login_input_css": "#login",
         "login_input_value": "the login",
         "password_input_css": "#password",
         "password_input_value": "the password",
-        "control_text": "You have been logged successfully" 
+        "control_text": "You have been logged successfully"
     });
 console.log('cookies: ', solution.cookies);
 console.log('localStorage: ', solution.localStorage);
@@ -279,14 +279,14 @@ console.log('url: ', solution.url);
 same with a proxy:
 ```javascript
 const solution = await ac.solveAntiGateTask(
-    'http://antigate.com/logintest.php', 
-    'Sign-in and wait for control text', 
-    { 
+    'http://antigate.com/logintest.php',
+    'Sign-in and wait for control text',
+    {
         "login_input_css": "#login",
         "login_input_value": "the login",
         "password_input_css": "#password",
         "password_input_value": "the password",
-        "control_text": "You have been logged successfully" 
+        "control_text": "You have been logged successfully"
     },
     'PROXY_IP',
     'PROXY_PORT',
@@ -321,7 +321,7 @@ console.log(solution);
 Bypass Cloudflare / Datadome / etc. [More info about this](https://anti-captcha.com/ru/apidoc/task-types/AntiBotCookieTask):
 ```javascript
 const solution = await ac.solveAntiBotCookieTask(
-    'https://www.thewebsite.com/', 
+    'https://www.thewebsite.com/',
     'PROXY_IP',
     'PROXY_PORT',
     'PROXY_LOGIN',
@@ -348,7 +348,7 @@ Bypass Funcaptcha / Arkoselabs via proxy:
 ac.settings.funcaptchaDataBlob = 'blob value here is any, or leave it empty';
 const token = await ac.solveFunCaptchaProxyOn(
     'https://www.thewebsite.com/path',
-    'site-key', 
+    'site-key',
     'http',
     '1.2.3.4',
     3128,

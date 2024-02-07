@@ -1,7 +1,7 @@
 {
-  "name": "@antiadmin/anticaptchaofficial",
-  "version": "1.0.45",
-  "description": "Official Anti-Captcha.com npm library",
+  "name": "@gentslava/anticaptcha",
+  "version": "1.0.0",
+  "description": "Fork of Official Anti-Captcha.com npm library",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,12 +30,12 @@
     "datadome bypass",
     "object coordinates"
   ],
-  "author": "Anti Admin",
+  "author": "Gentslava",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anti-captcha/anticaptcha-npm/issues"
+    "url": "https://github.com/gentslava/anticaptcha-npm/issues"
   },
-  "homepage": "https://github.com/anti-captcha/anticaptcha-npm",
+  "homepage": "https://github.com/gentslava/anticaptcha-npm",
   "dependencies": {
     "axios": "^0.21.1"
   }
