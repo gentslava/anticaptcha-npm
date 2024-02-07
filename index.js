@@ -1,5 +1,5 @@
 class AntiCaptcha {
-    constructor() {
+    constructor(settings = {}) {
         this.settings = {
             clientKey: '12345678901234567890123456789012',
 
@@ -25,6 +25,7 @@ class AntiCaptcha {
 
             funcaptchaApiJSSubdomain: null,
             funcaptchaDataBlob: null,
+            ...settings,
         };
     }
 
