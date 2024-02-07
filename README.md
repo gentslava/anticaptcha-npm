@@ -10,14 +10,14 @@ For more technical information and articles visit our [documentation](https://an
 
 Module installation:
 ```bash
-npm install @antiadmin/anticaptchaofficial
+npm install @gentslava/anticaptcha
 ```
 
 Import and check your balance in sync mode:
 ```javascript
 (async() => {
 
-    const ac = require("@antiadmin/anticaptchaofficial");
+    const ac = require("@gentslava/anticaptcha");
     ac.setAPIKey('YOUR_API_KEY');
     try {
         const balance = await ac.getBalance();
@@ -37,7 +37,7 @@ Import and check your balance in sync mode:
 ```
 Or do the same with promises:
 ```javascript
-const ac = require("@antiadmin/anticaptchaofficial");
+const ac = require("@gentslava/anticaptcha");
 ac.setAPIKey('YOUR_API_KEY');
 ac.getBalance()
      .then(balance => {
